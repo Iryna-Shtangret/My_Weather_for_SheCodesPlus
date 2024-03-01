@@ -10,12 +10,13 @@
   <body>
     <div class="container">
       <header>
-        <form>
+        <form id="search-form">
           <input
             type="search"
             class="col-8 search-form"
             placeholder="Введіть місто.."
             required
+            id="city"
           />
           <input type="submit" class="col-4 button-form" value="Шукати" />
         </form>
@@ -23,7 +24,7 @@
       <main>
         <div class="weather-data">
           <div>
-            <h1 class="city">Місто</h1>
+            <h1 class="rezultCity" id="foundedCity">Місто</h1>
             <p class="weather-details">
               Четверг 19:03, пасмурно
               <br />
@@ -33,7 +34,7 @@
           </div>
           <div class="data-temp">
             <img src="img\broken-clouds-day.png" alt="icon" class="icon-temp" />
-            <div class="temperature">9</div>
+            <div class="temperature">11</div>
             <div class="temperature-unit">°C</div>
           </div>
         </div>
@@ -56,5 +57,6 @@
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
