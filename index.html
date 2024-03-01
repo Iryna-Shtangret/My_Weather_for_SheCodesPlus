@@ -9,23 +9,32 @@
   </head>
   <body>
     <div class="container">
-      <head>
-        Hello World!
+      <header>
         <form>
-          <input type="search" />
-          <input type="submit" />
+          <input
+            type="search"
+            class="col-8 search-form"
+            placeholder="Введіть місто.."
+            required
+          />
+          <input type="submit" class="col-4 button-form" value="Шукати" />
         </form>
-      </head>
+      </header>
       <main>
-        <div>Місто</div>
-        <div class="row weather-data">
-          <div class="col-6">
-            <div>Четверг 19:03, пасмурно</div>
-            <div>Вологість 10°C, швидкість вітру 5 км/г</div>
+        <div class="weather-data">
+          <div>
+            <h1 class="city">Місто</h1>
+            <p class="weather-details">
+              Четверг 19:03, пасмурно
+              <br />
+              Вологість: <strong class="humidity">10%</strong>, швидкість вітру:
+              <strong class="wind">5 км/г</strong>
+            </p>
           </div>
-          <div class="col-6">
-            <div>:)</div>
-            <div>5°C</div>
+          <div class="data-temp">
+            <img src="img\broken-clouds-day.png" alt="icon" class="icon-temp" />
+            <div class="temperature">9</div>
+            <div class="temperature-unit">°C</div>
           </div>
         </div>
       </main>
