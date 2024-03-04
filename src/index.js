@@ -27,7 +27,6 @@ function changeCity(response) {
   let windWeather = document.querySelector("#wind");
   let tempWeather = document.querySelector("#temp");
   let iconWeather = document.querySelector("#icon");
-  let dayWeather = document.querySelector("#day");
   let timeWeather = document.querySelector("#time");
   let dateWeather = new Date(response.data.time * 1000);
   searchingCity.innerHTML = response.data.city;
@@ -45,11 +44,34 @@ function callDataWeather(city) {
   axios.get(apiUrl).then(changeCity);
 }
 
+function changeForecast(response) {
+  console.log(response);
+}
+
+function callscriptForecast(city) {
+  let apiKey = "dboef2d023e8b54bffat4b762d81356c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeForecast);
+}
+
 function reedCity(event) {
   event.preventDefault();
   let newCity = document.querySelector("#city");
 
   callDataWeather(newCity.value);
+  callscriptForecast(newCity.value);
+}
+
+function scriptForecast() {
+  let codeForecast = `
+  <div>
+  <div class="forecastName">Понеділок</div>
+  <div class="forecastImg">
+  <img src="img\broken-clouds-day.png" />
+  </div>
+  <div class="forecastTemp">11* 5*</div>
+  </div>`;
+  return codeForecast;
 }
 
 let searchFormCity = document.querySelector("#search-form");

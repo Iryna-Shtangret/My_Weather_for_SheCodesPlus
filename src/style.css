@@ -73,8 +73,8 @@ form {
 
 .icon-temp {
   height: 88px;
-  weight: 88px;
-  padding-top: 20px;
+  width: 88px;
+  padding-top: 30px;
 }
 
 .temperature {
@@ -86,6 +86,28 @@ form {
 .temperature-unit {
   font-size: 28px;
   padding-top: 38px;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.forecastName {
+  font-size: 14px;
+  color: rgba(39, 33, 66, 0.6);
+  padding-top: 10px;
+}
+
+.forecastImg img {
+  height: 58px;
+  width: 58px;
+}
+
+.forecastTemp {
+  color: #f65282;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 footer {
