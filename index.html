@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Погода</title>
   </head>
   <body>
@@ -24,17 +25,20 @@
       <main>
         <div class="weather-data">
           <div>
-            <h1 class="rezultCity" id="foundedCity">Місто</h1>
+            <h1 class="rezultCity" id="foundedCity"></h1>
             <p class="weather-details">
-              Четверг 19:03, пасмурно
+              <span id="time"></span>,
+              <span id="description"></span>
               <br />
-              Вологість: <strong class="humidity">10%</strong>, швидкість вітру:
-              <strong class="wind">5 км/г</strong>
+              Вологість:
+              <strong class="humidity"><span id="humidity"></span>%</strong>,
+              вітер:
+              <strong class="wind"><span id="wind"></span>км/г</strong>
             </p>
           </div>
           <div class="data-temp">
-            <img src="img\broken-clouds-day.png" alt="icon" class="icon-temp" />
-            <div class="temperature">11</div>
+            <div id="icon"></div>
+            <div class="temperature" id="temp"></div>
             <div class="temperature-unit">°C</div>
           </div>
         </div>
