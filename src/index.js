@@ -20,12 +20,13 @@ function functionTime(time) {
   return `${days[day]} ${hours}:${minutes}`;
 }
 
-//function formatDay(time) {
-//let day = time.getDay();
-//let days = ["Нед", "Пон", "Вівт", "Сер", "Чет", "П'ят", "Суб"];
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let day = date.getDay();
+  let days = ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
 
-//return `${days[day]} `;
-//}
+  return `${days[day]} `;
+}
 
 function changeCity(response) {
   let searchingCity = document.querySelector("#foundedCity");
@@ -35,7 +36,7 @@ function changeCity(response) {
   let tempWeather = document.querySelector("#temp");
   let iconWeather = document.querySelector("#icon");
   let timeWeather = document.querySelector("#time");
-  //let dayWeather = document.querySelector("#day");
+
   let dateWeather = new Date(response.data.time * 1000);
   searchingCity.innerHTML = response.data.city;
   descriptionWeather.innerHTML = response.data.condition.description;
@@ -44,7 +45,6 @@ function changeCity(response) {
   iconWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="icon" class="icon-temp" />`;
   tempWeather.innerHTML = Math.round(response.data.temperature.current);
   timeWeather.innerHTML = functionTime(dateWeather);
-  //dayWeather.innerHTML = formatDay(dateWeather);
 }
 
 function callDataWeather(city) {
@@ -54,7 +54,6 @@ function callDataWeather(city) {
 }
 
 function changeForecast(response) {
-  console.log(response);
   let codeForecast = "";
   response.data.daily.forEach(function (day, index) {
     console.log(day);
@@ -63,11 +62,13 @@ function changeForecast(response) {
         codeForecast +
         `
   <div>
-  <div class="forecastName">Понеділок</div>
+  <div class="forecastName">${formatDay(day.time)}</div>
   <div class="forecastImg">
-  <img src="img/broken-clouds-day.png" alt="icon" />
+  <img src="${day.condition.icon_url}" alt="icon" />
   </div>
-  <div class="forecastTemp">11* 5*</div>
+  <div class="forecastTemp">${Math.round(
+    day.temperature.maximum
+  )}* ${Math.round(day.temperature.minimum)}*</div>
   </div>`;
     }
   });
