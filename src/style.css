@@ -92,6 +92,8 @@ form {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .forecastName {
   font-size: 14px;
@@ -100,8 +102,8 @@ form {
 }
 
 .forecastImg img {
-  height: 58px;
-  width: 58px;
+  height: 78px;
+  width: 78px;
 }
 
 .forecastTemp {

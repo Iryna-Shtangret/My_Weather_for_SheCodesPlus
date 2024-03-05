@@ -68,7 +68,7 @@ function changeForecast(response) {
   </div>
   <div class="forecastTemp">${Math.round(
     day.temperature.maximum
-  )}* ${Math.round(day.temperature.minimum)}*</div>
+  )}° ${Math.round(day.temperature.minimum)}°</div>
   </div>`;
     }
   });
@@ -93,4 +93,4 @@ function reedCity(event) {
 let searchFormCity = document.querySelector("#search-form");
 searchFormCity.addEventListener("submit", reedCity);
 callDataWeather("Київ");
-//changeForecast("Київ");
+callscriptForecast("Київ");
